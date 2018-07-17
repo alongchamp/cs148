@@ -1,0 +1,51 @@
+CREATE TABLE IF NOT EXISTS tblStudents (
+	pmkSNetId varchar(20) NOT NULL PRIMARY KEY,
+	fldSFName varchar(20) DEFAULT NULL,
+	fldSLName varchar(20) DEFAULT NULL,
+	fldSEmail varchar(20) DEFAULT NULL,
+	fldStartYear int(4) DEFAULT NULL,
+	fnkANetId varchar(20) DEFAULT NULL
+)
+
+CREATE TABLE IF NOT EXISTS tblAdvisors (
+	pmkANetId varchar(20) NOT NULL PRIMARY KEY,	
+	fldAFName varchar(20) DEFAULT NULL,
+	fldALName varchar(20) DEFAULT NULL,
+	fldAEmail varchar(20) DEFAULT NULL,
+	fnkSNetId varchar(20) DEFAULT NULL
+)
+ 
+CREATE TABLE IF NOT EXISTS tblPlans (
+	pmkPlanId int(5) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	fldCatalogYear int(4) NOT NULL,
+	fldDateCreated varchar(10) NOT NULL,
+	fldStudentDegree char(5) NOT NULL,
+	fldTotalCredits int(3) DEFAULT NULL,
+	fnkSNetId varchar(20) DEFAULT NULL,
+	fnkANetId varchar(20) DEFAULT NULL
+)
+
+CREATE TABLE IF NOT EXISTS tblSemesters (
+	pmkSemTerm varchar(5) NOT NULL,
+	pmkSemYear int(4) NOT NULL,
+	pmkSemCredits int(2) NOT NULL,
+	PRIMARY KEY (pmkSemTerm, pmkSemYear, pmkSemCredits),
+	fnkPlanId int(5) NOT NULL
+)
+
+CREATE TABLE IF NOT EXISTS tblSemesterClass (
+	pmkSemClassId int(5) NOT NULL PRIMARY KEY,
+	fldRequired char(3) DEFAULT NULL,
+	fnkClassId int(5) DEFAULT NULL,
+	fnkSemTerm varchar(5) DEFAULT NULL,
+	fnkSemYear int(4) DEFAULT NULL,
+	fnkSemCredits int(2) DEFAULT NULL
+)
+
+CREATE TABLE IF NOT EXISTS tblClasses (
+	pmkClassId int(11) NOT NULL PRIMARY KEY,
+	fldClassNum int(11) DEFAULT NULL,
+	fldClassName varchar(50) DEFAULT NULL,
+	fldDepartment varchar(20) DEFAULT NULL,
+	fldCredits int(2) DEFAULT NULL
+)

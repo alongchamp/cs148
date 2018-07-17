@@ -1,0 +1,37 @@
+CREATE TABLE IF NOT EXISTS tblDegree (
+	pmkDegreeId int(5) AUTO_INCREMENT PRIMARY KEY,
+	fldType varchar(10) NOT NULL,
+	fldAOStudy varchar(10) NOT NULL,
+	fldCollege varchar(25) NOT NULL
+)
+
+CREATE TABLE IF NOT EXISTS tblAdvisor (
+	pmkAdvisorNetId varchar(20) NOT NULL PRIMARY KEY,
+	fldAdvisorEmail varchar(20) NOT NULL,
+	fldAFirstName varchar(20) NOT NULL,
+ 	fldALastName varchar(20) NOT NULL,
+	fnkDegreeId int(5) DEFAULT NULL
+)
+
+CREATE TABLE IF NOT EXISTS tblStudent (
+	pmkStudentNetId varchar(20) NOT NULL PRIMARY KEY,
+	fldSFirstName varchar(20) NOT NULL,
+	fldSLastName varchar(20) NOT NULL,
+	fldStudentEmail varchar(20) NOT NULL,
+	fldStartYear int(4) NOT NULL,
+	fnkDegreeId int(5) DEFAULT NULL
+)
+
+CREATE TABLE IF NOT EXISTS tblSemester (
+	pmkSemesterId int(5) AUTO_INCREMENT PRIMARY KEY,
+	fldTerm varchar(10) NOT NULL,
+	fnkStudentNetId varchar(20) DEFAULT NULL,
+ 	fnkCourseId int(5) DEFAULT NULL
+)
+
+CREATE TABLE IF NOT EXISTS tblCourses (
+	pmkCourseId int(5) AUTO_INCREMENT PRIMARY KEY,
+	fldDepartment char(5) NOT NULL,
+	fldCourseNumber int(3) NOT NULL,
+	fldCredits int (2) NOT NULL
+)

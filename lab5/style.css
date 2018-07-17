@@ -1,0 +1,28 @@
+/* 
+    Created on : Oct 25, 2016, 10:31:46 AM
+    Author     : Aaron Longchamp
+*/
+
+html {
+    background: lightgrey;
+    background-size: cover;
+}
+
+#main {
+    margin-left: 10%;
+}
+
+object {
+    margin: auto;
+    display: block;
+    width: 80%;
+    height: 650px;
+}
+
+footer {
+    color: rgba(999,999,999,0.3);
+    width: 90%;
+    position: absolute;
+    bottom: 0;
+}
+
