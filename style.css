@@ -1,0 +1,63 @@
+/*
+    Created on : Oct 25, 2016, 10:31:46 AM
+    Author     : Aaron Longchamp
+*/
+
+html {
+    background: url(images/morning.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+a {
+    color: darkslateblue;
+}
+
+a:visited {
+    color: crimson;
+}
+
+h1 {
+    text-align: center;
+    width: 90%;
+    margin-left: 1em;
+    margin-right: 1em;
+    background-color: rgba(999,999,999,0.35);
+}
+
+footer {
+    display: inline-block;
+    background-color: rgba(999, 999, 999, 0.35);
+    color: rgba(999,999,999,0.3);
+    width: 90%;
+    position: absolute;
+    bottom: 0;
+}
+
+#live {
+    border: 50px;
+    float: left;
+    width: 30%;
+    text-align: center;
+    background-color: rgba(999,999,999,0.45);
+    margin: 0;
+    padding: 0;
+    margin-left: 10%;
+
+}
+
+#dev {
+    float: right;
+    width: 30%;
+    text-align: center;
+    background-color: rgba(999,999,999,0.45);
+    margin-right: 10%;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+object {
+    width: 98%;
+    height: 650px;
+}
